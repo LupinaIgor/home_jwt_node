@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "Get JWT Tokens",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LupinaIgor/home_jwt_node.git"
+  },
+  "private": false
+}
