@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  home.api.jwt-create:
+    build:
+      context: ./back/jwt_create
+#      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "3939:3030"
+
+  home.api.jwt-verify:
+    build:
+      context: ./back/jwt_verify
+#      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "3034:3030"
+
+  home.front.public:
+    build:
+      context: ./front/public
+      dockerfile: Dockerfile
+#      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
