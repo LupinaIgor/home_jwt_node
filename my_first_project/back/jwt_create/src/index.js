@@ -6,7 +6,7 @@ dotenv.config();
 
 // Получить данные о конфигурации - и если данных нет - назначить по умолчанию
 const SERVER_HOST = process.env.SERVER_HOST || "0.0.0.0";
-const SERVER_PORT = process.env.SERVER_PORT || 3030;
+const SERVER_PORT = process.env.SERVER_PORT || 3000;
 
 // Настройка выдачи ключей
 import jwt from "jsonwebtoken"; // Модуль

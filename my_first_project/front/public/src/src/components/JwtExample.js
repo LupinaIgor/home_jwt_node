@@ -15,7 +15,8 @@ export default function JwtExample () {
     }
 
     const getJwtToken = () => {
-        fetch('http://localhost:3939')
+        // http://localhost:3939
+        fetch('http://localhost/api/jwt/create')
             .then(res => res.text())
             .then(token => {
                 setJwtToken(token)
@@ -26,7 +27,8 @@ export default function JwtExample () {
     }
 
     const verifyJwtToken = () => {
-        fetch('http://localhost:3034', {
+        //http://localhost:3034
+        fetch('http://localhost/api/jwt/verify', {
             headers: {
                 Authorization: 'Bearer ' + jwtToken
             }
