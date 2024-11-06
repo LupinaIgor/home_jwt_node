@@ -1,0 +1,69 @@
+version: '3.1'
+
+services:
+#
+#
+#  vp321.redis:
+#    image: redis
+#    ports:
+#      - "6379:6379"
+#
+#
+#  vp321.nginx:
+#    image: nginx:latest
+#    volumes:
+#      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+#    ports:
+#      - "80:80"
+#    depends_on:
+#      - vp321.api.csharp
+#      - vp321.api.express
+#      - vp321.api.http
+#
+#
+
+  home.api.csharp:
+    build:
+      context: ./backend/csharp-api
+    env_file:
+      - ./jwt.env
+    ports:
+      - "5000:5000"
+
+
+  home.api.express:
+    build:
+      context: ./backend/express-api
+    env_file:
+      - ./jwt.env
+    environment:
+      - SERVER_NAME=ExpressServer
+#      - SERVER_PORT=4000
+    ports:
+      - "5555:3000"
+
+  home.api.http:
+    build:
+      context: ./backend/http-api
+    env_file:
+      - ./jwt.env
+    environment:
+      - SERVER_NAME=HttpServer
+    ports:
+      - "7777:3000"
+#
+#  vp321.api.hiload1:
+#    build:
+#      context: ./backend/http-api
+#    env_file:
+#      - ./jwt.env
+#    environment:
+#      - SERVER_NAME=HiLoad First
+
+#  vp321.api.hiload2:
+#    build:
+#      context: ./backend/http-api
+#    env_file:
+#      - ./jwt.env
+#    environment:
+#      - SERVER_NAME=HiLoad Second
