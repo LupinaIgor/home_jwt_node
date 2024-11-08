@@ -2,5 +2,12 @@
   "type": "module",
   "scripts": {
     "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@keyv/redis": "^3.0.1",
+    "cache-manager": "^6.1.2",
+    "cache-manager-redis-store": "^3.0.1",
+    "cache-manager-redis": "^0.6.0",
+    "cacheable": "^1.8.3"
   }
 }
