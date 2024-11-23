@@ -49,6 +49,7 @@ services:
       - ./jwt.env
     environment:
       - SERVER_NAME=HttpServer
+      - REDIS_HOST=home.redis
 #    ports:
 #      - "7777:3000"
 
@@ -59,6 +60,7 @@ services:
       - ./jwt.env
     environment:
       - SERVER_NAME=HiLoad First
+      - REDIS_HOST=home.redis
 
   home.api.hiload2:
     build:
@@ -67,3 +69,4 @@ services:
       - ./jwt.env
     environment:
       - SERVER_NAME=HiLoad Second
+      - REDIS_HOST=home.redis

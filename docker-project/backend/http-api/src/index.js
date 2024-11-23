@@ -20,7 +20,7 @@ const cache = createCache({
     ],
 })
 
-// console.log(`redis://${REDIS_HOST}:${REDIS_PORT}/${REDIS_CACHE_DB}`)
+console.log(`redis://${REDIS_HOST}:${REDIS_PORT}/${REDIS_CACHE_DB}`)
 
 cache.on('set', (args) => {
     console.info('Redis set:', args);
