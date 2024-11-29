@@ -25,6 +25,22 @@ app.use(express.static(staticFolder));
 // Это означает, что все файлы внутри wwwroot (например, HTML, CSS, JavaScript, изображения) будут доступны напрямую через веб-сервер.
 
 
+/**
+ *  Настройка работы с файлами с помощью express-fileupload
+ */
+import fileUpload from 'express-fileupload';
+// express-fileupload — это middleware (промежуточное ПО) для Express.js, которое упрощает обработку загрузки файлов на сервер.
+app.use(fileUpload());//включает обработку файлов в приложении, добавляя объект req.files в каждый запрос.
+// После добавления этого middleware сервер сможет принимать загружаемые файлы, которые отправляются в HTTP-запросах.
+// Например, если клиент отправляет файл с именем avatar, то он будет доступен в обработчике как req.files.avatar.
+
+
+/**
+ * Подключение маршрутов через роутер
+ */
+import router from './routes/index.js';//Импортируется модуль роутера из файла ./routes/index.js.
+app.use(router)//подключает этот роутер к приложению Express.
+
 
 /**
  * Server run
